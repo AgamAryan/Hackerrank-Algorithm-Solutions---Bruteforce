@@ -1,0 +1,56 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        //System.out.print("Enter size of 2d array: ");
+        int n= sc.nextInt();
+        int arr[][]=new int[n][n];
+
+        //System.out.println("Input time : ");
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                arr[i][j]=sc.nextInt();
+                while(arr[i][j]<-100 || arr[i][j]>100){
+                    //System.out.print("Enter within range : ");
+                    arr[i][j]=sc.nextInt();
+                }
+            }
+            //System.out.println("Elements till row "+i+" of array : "+Arrays.deepToString(arr));
+        }
+        //System.out.println("Array : "+Arrays.deepToString(arr));
+
+        //System.out.println("Sum time :");
+        int sumlr=0;
+        int sumrl=0;
+
+        for(int i=0; i<n; i++){
+            for(int j=i; j<=i; j++){
+                sumlr=sumlr+arr[i][j];
+            }
+            //System.out.println("Sum of sumlf till row "+i+" is : "+sumlr);
+            //both upper and lower logics works same
+            /*for(int j=0; j<=i; j++){
+                if(i==j){
+                    sumlr=sumlr+arr[i][j];
+                }
+            }
+            System.out.println("Sum of sumlr till row "+i+" is : "+sumlr);*/
+        }
+        //System.out.println("Sum of sumlr is : "+sumlr);
+
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                if(i+j==(n-1)){
+                    sumrl=sumrl+arr[i][j];
+                }
+            }
+            //System.out.println("Sum of sumrl till row "+i+" is : "+sumrl);
+        }
+        //System.out.println("Sum of sumrl is : "+sumrl);
+
+        int a=(sumlr-sumrl);
+        a=Math.abs(a);
+        //System.out.print("Absolute difference btw sum of diagonals is : ");
+        System.out.println(a);
+    }
+}
