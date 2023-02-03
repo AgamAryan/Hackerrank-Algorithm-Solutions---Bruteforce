@@ -1,0 +1,41 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        //System.out.print("Size/no. of candles : ");
+        int n=sc.nextInt();
+        while(n<1 || n>100000){
+            //System.out.print("Enter in range : ");
+            n=sc.nextInt();
+        }
+        int arr[]=new int[n];
+
+        //System.out.println("Height chart of candles : ");
+        for(int i=0; i<n; i++){
+            arr[i]=sc.nextInt();
+            while(arr[i]<1 || arr[i]>10000000){
+                //System.out.print("Enter within range : ");
+                arr[i]=sc.nextInt();
+            }
+            //System.out.println("Height of candle no. "+(i+1)+" is : "+arr[i]);
+        }
+        //System.out.println("Height arrays of candle : "+Arrays.toString(arr));
+
+        int a=0;
+        for(int i=0; i<n; i++){
+            if(arr[i]>a){
+                a=arr[i];
+            }
+        }
+        //System.out.println("Highest height of candle is : "+a);
+
+        int b=0;
+        for(int i=0; i<n; i++){
+            if(arr[i]==a){
+                b=b+1;
+            }
+        }
+        //System.out.print("No. of highest height candles : ");
+        System.out.println(b);
+    }
+}
