@@ -1,0 +1,29 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        //System.out.print("Size of array : ");
+        int n=sc.nextInt();
+        while(n<1 || n>1000){
+            //System.out.print("Wrong, enter size again : ");
+            n=sc.nextInt();
+        }
+        int[] arr=new int[n];
+        //System.out.print("Enter element in range : ");
+        int a;
+        for(int i=0; i<arr.length; i++){
+            a=sc.nextInt();
+            while(a<1 || a>1000){
+                //System.out.print("Wrong, enter element in range : ");
+                a=sc.nextInt();
+            }
+            arr[i]=a;
+        }
+        //System.out.println("Array : "+Arrays.toString(arr));
+        int sum=0;
+        for(int i=0; i<arr.length; i++){
+            sum=sum+arr[i];
+        }
+        //System.out.print("Sum of array : ");
+        System.out.print(sum);
+    }
+}
