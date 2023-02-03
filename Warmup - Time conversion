@@ -1,0 +1,49 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter your time : ");
+
+        String time=sc.next();
+        System.out.println("Time : "+time);
+        int hour=Integer.valueOf(time.substring(0, 2));
+        int minute=Integer.valueOf(time.substring(3, 5));
+        int second=Integer.valueOf(time.substring(6, 8));
+        String str=time.substring(8);
+        System.out.println("Time : "+hour+minute+second+str);
+
+        if(str.equals("AM") && hour<=12){
+            if(second>59){
+                minute=minute+1;
+                second=second-60;
+            } else if(minute>59){
+                hour=hour+1;
+                minute=minute-60;
+            } else if(hour>=12){
+                hour=hour-12;
+            }
+        } else if(str.equals("PM") && hour<=12) {
+            if(second>59){
+                minute=minute+1;
+                second=second-60;
+            } else if(minute>59){
+                hour=hour+1;
+                minute=minute-60;
+            } else if(hour<12){
+                hour=hour+12;
+            }
+        }
+        String hr=String.valueOf(hour);
+        String min=String.valueOf(minute);
+        String sec=String.valueOf(second);
+        if (hour<10){
+            hr= '0'+hr;
+        }
+        if (minute<10){
+            min = '0'+min;
+        }
+        if (second<10){
+            sec = '0'+sec;
+        }
+        System.out.println(hr+":"+min+":"+sec);
+    }
+}
