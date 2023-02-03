@@ -1,0 +1,39 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a[]=new int[3];
+        int b[]=new int[3];
+
+        //System.out.println("Input : ");
+        for(int i=0; i<6; i++){
+            if(i<3){
+                int a1=sc.nextInt();
+                while(a1<1 || a1>100){
+                    a1=sc.nextInt();
+                }
+                a[i]=a1;
+            } else {
+                int b1=sc.nextInt();
+                while(b1<1 || b1>100){
+                    b1=sc.nextInt();
+                }
+                b[i-3]=b1;
+            }
+        }
+        //System.out.println("Alice score array : "+Arrays.toString(a)+"\nBob score array : "+Arrays.toString(b));
+
+        int[] score=new int[2];
+        for(int i=0; i<3; i++){
+            if(a[i]>b[i]){
+                score[0]=score[0]+1;
+            } else if (a[i]<b[i]){
+                score[1]=score[1]+1;
+            }
+        }
+        //System.out.println("Score array : "+Arrays.toString(score));
+
+        for(int i=0; i<2; i++){
+            System.out.print(score[i]+" ");
+        }
+    }
+}
