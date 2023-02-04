@@ -1,0 +1,45 @@
+public class Hacker_rank {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        //System.out.print("Enter s, starting point of sam's house : ");
+        int s=sc.nextInt();
+        //System.out.print("Enter t, ending point of sam's house : ");
+        int t=sc.nextInt();
+
+        //System.out.print("Enter a, location of apple tree : ");
+        int a=sc.nextInt();
+        //System.out.print("Enter b, location of orange tree : ");
+        int b=sc.nextInt();
+
+        //System.out.print("Enter m, no. of apples : ");
+        int m=sc.nextInt();
+        //System.out.print("Enter n, no. of oranges : ");
+        int n=sc.nextInt();
+
+        int[] apple=new int[m];
+        int[] orange=new int[n];
+        //System.out.println("Enter distance of each apple from apple tree : ");
+        for(int i=0; i<m; i++){
+            apple[i]=sc.nextInt()+a;
+        }
+        //System.out.println("Apples distance from starting point of scale : "+Arrays.toString(apple));
+        //System.out.println("Enter distance of each orange from orange tree : ");
+        for(int i=0; i<n; i++){
+            orange[i]=sc.nextInt()+b;
+        }
+        //System.out.println("Oranges distance from starting point of scale : "+Arrays.toString(orange));
+
+        int counta=0;
+        int countb=0;
+        for(int i=0; i<m+n; i++){
+            if(i<m && apple[i]>=s && apple[i]<=t){
+                counta++;
+            } else if(i>=m && orange[i-m]>=s && orange[i-m]<=t){
+                countb++;
+            }
+        }
+        //System.out.println("Apple and orange count on house : ");
+        System.out.println(counta+"\n"+countb);
+    }
+}
