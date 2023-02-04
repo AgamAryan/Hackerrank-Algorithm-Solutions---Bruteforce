@@ -1,0 +1,47 @@
+//remove all while loops to be safe from runtime errors
+//put 2nd for loop's if conditions and print statement in upper for loop, it'll still work same
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        //System.out.print("Enter no of students : ");
+        int n=sc.nextInt();
+        while(n<1 || n>60){
+            //System.out.print("Enter in range : ");
+            n=sc.nextInt();
+        }
+
+        int marksheet[]=new int[n];
+        //System.out.println("Input the marks : ");
+        for(int i=0; i<n; i++){
+            marksheet[i]=sc.nextInt();
+            while(marksheet[i]<1 || marksheet[i]>100){
+                marksheet[i]=sc.nextInt();
+            }
+        }
+        //System.out.println("Marksheet : "+Arrays.toString(marksheet));
+
+        //System.out.print("Roundoff marksheet : ");
+        for(int i=0; i<n; i++){
+            //both below conditions works same
+
+            /*if ((marksheet[i]-marksheet[i]%5+5)-marksheet[i]<3 && marksheet[i] >= 38){
+                marksheet[i]=marksheet[i]-marksheet[i]%5+5;
+            }*/
+
+            if(marksheet[i]>=38){
+                int mod5=marksheet[i]%5;
+                if(mod5>2){
+                    marksheet[i]+=5-mod5;
+                }
+            }
+
+            System.out.println(marksheet[i]);       //this line works same for lower loop
+        }
+
+        /*for(int i=0; i<n; i++){
+            System.out.println(marksheet[i]);
+        }*/
+    }
+}
