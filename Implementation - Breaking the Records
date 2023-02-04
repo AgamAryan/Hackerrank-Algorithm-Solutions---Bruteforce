@@ -1,0 +1,31 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        //System.out.print("Enter no. of games : ");
+        int n=sc.nextInt();
+        int score[]=new int[n];
+        //System.out.println("Enter the values :");
+        for(int i=0; i<n; i++){
+            score[i]=sc.nextInt();
+        }
+        //System.out.println("Score table : "+Arrays.toString(score));
+        int mincount=0;
+        int maxcount=0;
+        int minimum=score[0];
+        int maximum=score[0];
+        //System.out.println("Updation table : ");
+        //System.out.println("0 0");
+        for(int i=1; i<n; i++){
+            if(score[i]<minimum){
+                mincount++;
+                minimum=score[i];
+            } else if(score[i]>maximum){
+                maxcount++;
+                maximum=score[i];
+            }
+            //System.out.println(mincount+" "+maxcount);
+        }
+        //System.out.print("Updated values of max and min : ");
+        System.out.print(maxcount+" "+mincount);
+    }
+}
