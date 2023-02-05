@@ -1,0 +1,55 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        //System.out.println("No. of alphabets in array : 26");
+        String arr[]=new String[26];
+        arr[0]="a";
+        arr[1]="b";
+        arr[2]="c";
+        arr[3]="d";
+        arr[4]="e";
+        arr[5]="f";
+        arr[6]="g";
+        arr[7]="h";
+        arr[8]="i";
+        arr[9]="j";
+        arr[10]="k";
+        arr[11]="l";
+        arr[12]="m";
+        arr[13]="n";
+        arr[14]="o";
+        arr[15]="p";
+        arr[16]="q";
+        arr[17]="r";
+        arr[18]="s";
+        arr[19]="t";
+        arr[20]="u";
+        arr[21]="v";
+        arr[22]="w";
+        arr[23]="x";
+        arr[24]="y";
+        arr[25]="z";
+        //System.out.println("Enter height of each letter : ");
+        int[] arrn=new int[26];
+        for(int i=0; i<26; i++){
+            arrn[i]=sc.nextInt();
+        }
+        //System.out.println("Array val/indx : "+Arrays.toString(arrn));
+        //System.out.println("Array alphabet : "+Arrays.toString(arr));
+        //System.out.print("Enter string : ");
+        String s=sc.next();
+        int count=0;
+        for(int i=0; i<s.length(); i++){
+            count=Math.max(count, arrn[(int)s.charAt(i)-(int)'a']);
+            //check this condition to work same as upper condition
+            /*for(int j=0; j<26; j++){
+                if(arr[j].equals(s.charAt(i)) && count<arrn[j]){
+                    count=arrn[j];
+                }
+            }*/
+        }
+        int ans=count*s.length();
+        //System.out.print("Max area of rectangle : ");
+        System.out.println(ans);
+    }
+}
