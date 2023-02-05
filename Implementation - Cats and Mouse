@@ -1,0 +1,29 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        //System.out.print("Enter no. of queries : ");
+        int q=sc.nextInt();
+
+        for(int i=0; i<q; i++){
+            //System.out.print("Enter cat A position : ");
+            int ca=sc.nextInt();
+            //System.out.print("Enter cat B position : ");
+            int cb=sc.nextInt();
+            //System.out.print("Enter mouse position : ");
+            int mc=sc.nextInt();
+            if(Math.abs(ca-mc)<Math.abs(cb-mc)){
+                System.out.println("Cat A");
+            } else if (Math.abs(ca-mc)>Math.abs(cb-mc)){
+                System.out.println("Cat B");
+            }
+            //below both condition works fine, use any
+            /*else if (Math.abs(ca-mc)==Math.abs(cb-mc)){
+                System.out.println("Mouse C");
+            }*/
+            else {
+                System.out.println("Mouse C");
+            }
+        }
+    }
+}
