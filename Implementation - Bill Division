@@ -1,0 +1,26 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        //System.out.print("Enter n, size of array : ");
+        int n=sc.nextInt();
+        int[] bill=new int[n];
+        //System.out.print("Enter a, item Anna no consumed : ");
+        int a=sc.nextInt();
+        int actualcount=0;
+        //System.out.print("Enter item values : ");
+        for(int i=0; i<n; i++){
+            bill[i]=sc.nextInt();
+            actualcount=actualcount+bill[i];
+        }
+        actualcount=actualcount-bill[a];
+        //System.out.print("Enter charged amount : ");
+        int charged= sc.nextInt();
+        int actual=actualcount/2;
+        //System.out.println("Actual bill division : "+actual);
+        if(actual==charged){
+            System.out.print("Bon Appetit");
+        } else {
+            System.out.print(charged-actual);
+        }
+    }
+}
