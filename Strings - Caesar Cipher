@@ -1,0 +1,39 @@
+public class Solution {
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+        //System.out.print("Enter length of string : ");
+        int n=sc.nextInt();
+        //System.out.print("Enter String : ");
+        String str=sc.next();
+        //System.out.print("Enter shift : ");
+        int shift=sc.nextInt();
+        shift=shift%26;
+
+        char[] arrc=new char[n];
+        char c;
+        for(int i=0; i<n; i++){
+            c=str.charAt(i);
+            if(c >= 'A' && c <= 'Z'){
+                if((c + shift) > 90){
+                    c=(char) (c+shift-26);
+                    arrc[i]=c;
+                } else {
+                    c=(char) (c+shift);
+                    arrc[i]=c;
+                }
+            }else if(c >= 'a' && c<= 'z'){
+                if((c + shift) > 122){
+                    c=(char) (c+shift-26);
+                    arrc[i]=c;
+                } else {
+                    c=(char) (c+shift);
+                    arrc[i]=c;
+                }
+            }
+            System.out.print(c);
+        }
+        //System.out.println();
+        //System.out.print("ArrayList : "+Arrays.toString(arrc));
+    }
+}
