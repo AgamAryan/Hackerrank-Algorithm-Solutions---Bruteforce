@@ -1,0 +1,19 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        //System.out.print("Enter s, string : ");
+        String s=sc.next();
+        int count=1;        //1, because start word is small
+        for(int i=0; i<s.length(); i++){
+            if(Character.isUpperCase(s.charAt(i))){
+                count++;
+            }
+        }
+        System.out.println(count);
+        String[] arrs=s.split("(?=[A-Z])");
+        /*for(int i=0; i<count; i++){
+            System.out.println(arrs[i]);
+        }*/
+    }
+}
