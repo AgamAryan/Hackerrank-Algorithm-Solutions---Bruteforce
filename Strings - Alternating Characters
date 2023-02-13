@@ -1,0 +1,26 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        //System.out.print("Enter n, no. of strings : ");
+        int n=sc.nextInt();
+        char cs1, cs2;
+        int count;
+        //System.out.println("Enter strings : ");
+        String[] arrs=new String[n];
+        for(int i=0; i<n; i++){
+            arrs[i]=sc.next();      //each block contains a string
+            //System.out.println("Array arrs "+i+" : "+Arrays.toString(arrs));
+            count=0;
+            for(int j=0; j<arrs[i].length()-1; j++){
+                cs1=arrs[i].charAt(j);
+                cs2=arrs[i].charAt(j+1);
+                if(cs1==cs2){
+                    count++;
+                }
+            }
+            //System.out.print("Characters to be removed : ");
+            System.out.println(count);
+        }
+    }
+}
