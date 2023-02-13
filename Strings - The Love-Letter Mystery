@@ -1,0 +1,36 @@
+public class Solution {
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+        //System.out.print("Enter no. of queries : ");
+        int n=sc.nextInt();
+        String str;
+        int left, right, dollar;
+        char templ, tempr;
+
+        for(int i=0; i<n; i++){
+
+            //System.out.print("Enter string : ");
+            str=sc.next();
+            left=right=dollar=0;
+            templ=tempr=' ';
+
+            //changing into palindromes
+            for(int j=0; j<str.length()/2; j++){
+
+                templ=str.charAt(j);
+                tempr=str.charAt(str.length()-1-j);
+
+                if(templ>tempr){
+                    left=(int)(templ-tempr);
+                } else if(templ<tempr){
+                    right=(int)(tempr-templ);
+                }
+                dollar=left+right+dollar;
+                left=right=0;
+            }
+            System.out.println(dollar);
+
+        }
+    }
+}
