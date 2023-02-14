@@ -1,0 +1,27 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        //System.out.print("Enter no. of queries : ");
+        int q=sc.nextInt();
+        String str1, str2;
+        int i;
+        for(int k=0; k<q; k++){
+            //System.out.print("Enter String 1 : ");
+            str1=sc.next();
+            //System.out.print("Enter String 2 : ");
+            str2=sc.next();
+            for(i=0; i<26; i++){
+                if(str1.indexOf((char)(i+97)) != -1){
+                    if(str2.indexOf((char)(i+97)) != -1){
+                        break;
+                    }
+                }
+            }
+            if(i==26){
+                System.out.println("NO");
+            } else {
+                System.out.println("YES");
+            }
+        }
+    }
+}
