@@ -1,0 +1,24 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        //System.out.print("Enter t, no. of test cases : ");
+        int t=sc.nextInt();
+        //System.out.println("Initial height is 1");
+        int n, height;
+        for(int i=0; i<t; i++){
+            height=1;
+            //System.out.print("Enter n, cycle no. : ");
+            n=sc.nextInt();
+            for(int j=0; j<n; j++){
+                if(j%2==0){
+                    height=height*2;
+                } else {
+                    height++;
+                }
+            }
+            //System.out.print("Height after season : ");
+            System.out.println(height);
+        }
+    }
+}
