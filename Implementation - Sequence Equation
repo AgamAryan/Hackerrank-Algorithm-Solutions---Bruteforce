@@ -1,0 +1,21 @@
+public class Solution {
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        //System.out.print("Enter length of array : ");
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        //System.out.print("Fill the array : ");
+        for(int i=0; i<n; i++){
+            arr[i]=sc.nextInt();
+        }
+        int retrun[]=new int[n];
+        for(int i=1; i<=n; i++){
+            retrun[arr[arr[i-1]-1]-1]=i;        //most important to understand
+        }
+        //System.out.print("Retrun : ");
+        for(int i=0; i<n; i++){
+            System.out.println(retrun[i]);
+        }
+    }
+}
