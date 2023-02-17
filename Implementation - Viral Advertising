@@ -1,0 +1,18 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        //System.out.print("Enter n, no. of days : ");
+        int n=sc.nextInt();
+        int shared=5;
+        int liked=2;
+        int cumulative=0;
+        for(int i=0; i<n; i++){
+            cumulative=liked+cumulative;
+            shared=liked*3;
+            liked=shared/2;
+        }
+        //System.out.print("Cumulative : ");
+        System.out.println(cumulative);
+    }
+}
