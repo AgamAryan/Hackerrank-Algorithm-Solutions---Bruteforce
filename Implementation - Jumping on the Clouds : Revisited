@@ -1,0 +1,43 @@
+public class Solution {
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        //System.out.print("Enter n, size of array : ");
+        int n=sc.nextInt();
+        int[] c=new int[n];
+        //System.out.print("Enter k, jump size : ");
+        int k=sc.nextInt();
+        //System.out.print("Enter elements in array c, 0 & 1 only : ");
+        for(int i=0; i<n; i++){
+            c[i]=sc.nextInt();
+        }
+        int e=100;
+        //System.out.println("Child's initial energy : "+e);
+        int jumpcount=0;
+        while(e>=0 && jumpcount>=0){
+            if(c[(jumpcount)%n]>0){
+                e=e-1-2;
+            } else {
+                e=e-1;
+            }
+            //System.out.println();
+            //System.out.println("...............................................");
+            //System.out.println("Energy left after jump : "+e);
+            jumpcount=jumpcount+k;
+            //System.out.println("Jumpcount : "+jumpcount);
+            //System.out.println("...............................................");
+            //System.out.println();
+            if(jumpcount>=n){
+                jumpcount=jumpcount-n;
+                //System.out.println("...............................................");
+                //System.out.println("Managed jumpcount : "+jumpcount);
+                //System.out.println("...............................................");
+            }
+            if(jumpcount==0){
+                break;
+            }
+        }
+        //System.out.print("Child's final energy : ");
+        System.out.print(e);
+    }
+}
