@@ -1,0 +1,49 @@
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        //System.out.print("Enter n, length of width array : ");
+        int n=sc.nextInt();
+        //System.out.print("Enter t, no. of test cases : ");
+        int t=sc.nextInt();
+
+        int[] width=new int[n];
+        //System.out.println("Enter width of service lane : ");
+        for(int x=0; x<n; x++){
+            width[x]=sc.nextInt();
+        }
+        //System.out.println("Array width : "+Arrays.toString(width));
+
+        //System.out.println("Enter test case input : ");
+        int cases[][]=new int[t][2];
+        for(int i=0; i<t; i++){
+            //System.out.print("Enter entry point : ");
+            cases[i][0]=sc.nextInt();
+            //System.out.print("Enter exit point : ");
+            cases[i][1]=sc.nextInt();
+            //System.out.println();
+        }
+        //System.out.println("Array cases : "+Arrays.deepToString(cases));
+
+        int x;
+        int y;
+        int min=4;
+        int[] maxwidth=new int[t];
+        for(int i=0; i<t; i++){
+            x=cases[i][0];
+            y=cases[i][1];
+            for(int j=x; j<=y; j++){
+                if(width[j]<min){
+                    min=width[j];
+                }
+            }
+            maxwidth[i]=min;
+            min=4;
+        }
+
+        //System.out.println("Max width of vehicle : ");
+        for(int i=0; i<t; i++){
+            System.out.println(maxwidth[i]);
+        }
+    }
+}
