@@ -1,0 +1,37 @@
+public class Solution {
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        //System.out.print("Enter array length : ");
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        //System.out.print("Enter elements : ");
+        for(int i=0; i<n; i++){
+            arr[i]=sc.nextInt();
+        }
+        ArrayList<Integer> dist=new ArrayList<>();
+        int count=0;
+        for(int i=0; i<n-1; i++){
+            for(int j=(i+1); j<n; j++){
+                if(arr[i]==arr[j]){
+                    dist.add(j-i);
+                    count++;
+                }
+            }
+        }
+        //if(count==0){
+        if(dist.isEmpty()){
+            System.out.print("-1");
+            return;
+        }
+        //System.out.println("distance arraylist : "+dist);
+        int a=dist.get(0);
+        for(int i=0; i< dist.size(); i++){
+            if(a>dist.get(i)){
+                a=dist.get(i);
+            }
+        }
+        //System.out.print("Minimum dist : ");
+        System.out.print(a);
+    }
+}
