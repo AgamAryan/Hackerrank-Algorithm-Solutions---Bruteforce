@@ -1,0 +1,31 @@
+public class Solution {
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        //System.out.print("Enter size of array : ");
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        //System.out.print("Enter elements, 0 & 1 only : ");
+        for(int i=0; i<n; i++){
+            arr[i]=sc.nextInt();
+        }
+        //System.out.println("Array : "+Arrays.toString(arr));
+        int pathcount=0;
+        for(int i=0; i<n-1; ){
+            //System.out.println("Path (current index on array) : "+i);
+            if(i!=n-2 && arr[i+2]==0){
+                pathcount++;
+                i=i+2;
+                //System.out.println("Path (next index on array) : "+i);
+                //System.out.println("Pathcount (Steps) 2 : "+pathcount);
+            } else if(arr[i+1]==0){
+                pathcount++;
+                i++;
+                //System.out.println("Path (next index on array) : "+i);
+                //System.out.println("Pathcount (Steps) 1 : "+pathcount);
+            }
+        }
+        //System.out.print("Pathcount : ");
+        System.out.print(pathcount);
+    }
+}
